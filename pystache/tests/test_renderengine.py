@@ -432,17 +432,6 @@ class RenderTests(unittest.TestCase, AssertStringMixin, AssertExceptionMixin):
 
     ## Test cases related specifically to sections.
 
-    def test_section__end_tag_with_no_start_tag(self):
-        """
-        Check what happens if there is an end tag with no start tag.
-
-        """
-        template = '{{/section}}'
-        try:
-            self._assert_render(None, template)
-        except ParsingError as err:
-            self.assertEqual(str(err), "Section end tag mismatch: section != None")
-
     def test_section__end_tag_mismatch(self):
         """
         Check what happens if the end tag doesn't match.
