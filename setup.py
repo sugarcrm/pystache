@@ -19,7 +19,7 @@ Generate the reStructuredText long_description using--
 and be sure this new version is checked in.  You must have pandoc installed
 to do this step:
 
-    http://johnmacfarlane.net/pandoc/
+    https://pandoc.org/
 
 It helps to review this auto-generated file on GitHub prior to uploading
 because the long description will be sent to PyPI and appear there after
@@ -29,7 +29,7 @@ instead as plain-text, which we do not want.
 
 To check in advance that PyPI will accept and parse the reST file as HTML,
 you can use the rst2html program installed by the docutils package
-(http://docutils.sourceforge.net/).  To install docutils:
+(https://docutils.sourceforge.io/).  To install docutils:
 
     $ pip install docutils
 
@@ -40,11 +40,11 @@ no warnings:
 
 See here for more information:
 
-    http://docs.python.org/distutils/uploading.html#pypi-package-display
+    https://docs.python.org/3/distutils/uploading.html#pypi-package-display
 
 (2) Push to PyPI.  To release a new version of Pystache to PyPI--
 
-    http://pypi.python.org/pypi/pystache
+    https://pypi.org/project/pystache/
 
 create a PyPI user account if you do not already have one.  The user account
 will need permissions to push to PyPI.  A current "Package Index Owner" of
@@ -67,7 +67,7 @@ contents:
 
 as described here, for example:
 
-    http://docs.python.org/release/2.5.2/dist/pypirc.html
+    https://docs.python.org/release/2.5.2/dist/pypirc.html
 
 (3) Tag the release on GitHub.  Here are some commands for tagging.
 
@@ -389,7 +389,7 @@ def main(sys_argv):
           author_email='chris@ozmm.org',
           maintainer='Chris Jerdonek',
           maintainer_email='chris.jerdonek@gmail.com',
-          url='http://github.com/defunkt/pystache',
+          url='https://github.com/defunkt/pystache',
           install_requires=INSTALL_REQUIRES,
           packages=PACKAGES,
           package_data = {
