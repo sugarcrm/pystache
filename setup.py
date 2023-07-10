@@ -86,9 +86,7 @@ Push a tag to GitHub:
 """
 
 import os
-import shutil
 import sys
-
 
 py_version = sys.version_info
 
@@ -106,11 +104,12 @@ if py_version < (2, 3, 5):
     # TODO: this might not work yet.
     import distutils as dist
     from distutils import core
+
     setup = core.setup
 else:
     import setuptools as dist
-    setup = dist.setup
 
+    setup = dist.setup
 
 VERSION = '0.5.4a'  # Also change in pystache/__init__.py.
 
@@ -354,7 +353,7 @@ def get_extra_args():
     # TODO: it might be more correct to check whether we are using
     #   Distribute instead of setuptools, since use_2to3 doesn't take
     #   effect when using Python 2, even when using Distribute.
-    if py_version >= (3, ):
+    if py_version >= (3,):
         # Causes 2to3 to be run during the build step.
         extra['use_2to3'] = True
 
@@ -362,7 +361,6 @@ def get_extra_args():
 
 
 def main(sys_argv):
-
     # TODO: use the logging module instead of printing.
     # TODO: include the following in a verbose mode.
     sys.stderr.write("pystache: using: version %s of %s\n" % (repr(dist.__version__), repr(dist)))
@@ -380,34 +378,35 @@ def main(sys_argv):
     template_files = ['*.mustache', '*.txt']
     extra_args = get_extra_args()
 
-    setup(name='pystache',
-          version=VERSION,
-          license='MIT',
-          description='Mustache for Python',
-          long_description=long_description,
-          author='Chris Wanstrath',
-          author_email='chris@ozmm.org',
-          maintainer='Chris Jerdonek',
-          maintainer_email='chris.jerdonek@gmail.com',
-          url='https://github.com/defunkt/pystache',
-          install_requires=INSTALL_REQUIRES,
-          packages=PACKAGES,
-          package_data = {
-              # Include template files so tests can be run.
-              'pystache.tests.data': template_files,
-              'pystache.tests.data.locator': template_files,
-              'pystache.tests.examples': template_files,
-          },
-          entry_points = {
+    setup(
+        name='pystache',
+        version=VERSION,
+        license='MIT',
+        description='Mustache for Python',
+        long_description=long_description,
+        author='Chris Wanstrath',
+        author_email='chris@ozmm.org',
+        maintainer='Chris Jerdonek',
+        maintainer_email='chris.jerdonek@gmail.com',
+        url='https://github.com/defunkt/pystache',
+        install_requires=INSTALL_REQUIRES,
+        packages=PACKAGES,
+        package_data={
+            # Include template files so tests can be run.
+            'pystache.tests.data': template_files,
+            'pystache.tests.data.locator': template_files,
+            'pystache.tests.examples': template_files,
+        },
+        entry_points={
             'console_scripts': [
                 'pystache=pystache.commands.render:main',
                 'pystache-test=pystache.commands.test:main',
             ],
-          },
-          classifiers = CLASSIFIERS,
-          **extra_args
-    )
+        },
+        classifiers=CLASSIFIERS,
+        **extra_args
+      )
 
 
-if __name__=='__main__':
+if __name__ == '__main__':
     main(sys.argv)
