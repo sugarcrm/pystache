@@ -183,6 +183,7 @@ def make_temp_path(path, new_ext=None):
     """
     Arguments:
 
+      path: the original file path.
       new_ext: the new file extension, including the leading dot.
         Defaults to preserving the existing file extension.
 
