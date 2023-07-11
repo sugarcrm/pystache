@@ -374,10 +374,10 @@ class RendererTests(unittest.TestCase, AssertStringMixin):
         Test _make_resolve_partial__parsed(): that we can take ParsedTemplates as partials
 
         """
-        partials = {"partial": parse(u"Hello, {{person}}")}
+        partials = {"partial": parse("Hello, {{person}}")}
         renderer = Renderer(partials=partials)
-        actual = renderer.render(u"{{>partial}}", {"person": "foo"})
-        self.assertString(actual, u"Hello, foo")
+        actual = renderer.render("{{>partial}}", {"person": "foo"})
+        self.assertString(actual, "Hello, foo")
 
     def test_render_name(self):
         """Test the render_name() method."""
