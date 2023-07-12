@@ -384,3 +384,4 @@ class _Parser(object):
             return _InvertedNode(tag_key, parsed_section)
 
         raise Exception("Invalid symbol for section tag: %s" % repr(tag_type))
+

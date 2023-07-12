@@ -38,12 +38,6 @@ Requirements
 
 Pystache is tested with--
 
--   Python 2.4 (requires simplejson [version
-    2.0.9](http://pypi.python.org/pypi/simplejson/2.0.9) or earlier)
--   Python 2.5 (requires
-    [simplejson](http://pypi.python.org/pypi/simplejson/))
--   Python 2.6
--   Python 2.7
 -   Python 3.1
 -   Python 3.2
 -   Python 3.3
@@ -56,18 +50,7 @@ If you use [pip](http://www.pip-installer.org/), you probably already satisfy
 this requirement.
 
 JSON support is needed only for the command-line interface and to run
-the spec tests. We require simplejson for earlier versions of Python
-since Python's [json](http://docs.python.org/library/json.html) module
-was added in Python 2.6.
-
-For Python 2.4 we require an earlier version of simplejson since
-simplejson stopped officially supporting Python 2.4 in simplejson
-version 2.1.0. Earlier versions of simplejson can be installed manually,
-as follows:
-
-    pip install 'simplejson<2.1.0'
-
-Official support for Python 2.4 will end with Pystache version 0.6.0.
+the spec tests.
 
 Install It
 ----------
