@@ -91,7 +91,7 @@ import sys
 
 py_version = sys.version_info
 
-VERSION = '0.5.4a'  # Also change in pystache/__init__.py.
+VERSION = '0.5.4b'  # Also change in pystache/__init__.py.
 
 FILE_ENCODING = 'utf-8'
 

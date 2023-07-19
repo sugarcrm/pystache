@@ -3,6 +3,11 @@ History
 
 **Note:** Official support for Python 2.4 will end with Pystache version 0.6.0.
 
+0.5.4b (2023-07-19)
+------------------
+
+-   Dropped Python 2 support and made the setup process compatible with latest setuptools.
+
 0.5.4 (2014-07-11)
 ------------------
 
